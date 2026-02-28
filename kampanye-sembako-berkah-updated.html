@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemitraan Sembako Berkah - Paket 50 Juta</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold-dark: #8B6914;
+  --gold: #D4AF37;
+  --gold-light: #F4E4C1;
+  --orange: #E67E22;
+  --brown-dark: #5D4037;
+  --brown: #8D6E63;
+  --cream: #FFF8E1;
+  --red: #C62828;
+  --text-dark: #3E2723;
+  --yellow: #FFF176;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, var(--cream) 0%, #FFECB3 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at center, rgba(212,175,55,0.1) 0%, transparent 70%);
+  position: relative;
+}
+
+.spiral {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.spiral-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.spiral-ring:nth-child(1) { width: 80px; height: 80px; }
+.spiral-ring:nth-child(2) { width: 60px; height: 60px; border-color: var(--orange); }
+.spiral-ring:nth-child(3) { width: 40px; height: 40px; }
+
+.spiral-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: var(--gold);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 6vw, 64px);
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+}
+
+.hero .gold {
+  color: var(--gold-dark);
+  font-size: clamp(36px, 7vw, 72px);
+  display: block;
+  margin-top: 10px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 18px;
+  color: var(--brown);
+  font-style: italic;
+}
+
+/* Highlight Box */
+.highlight {
+  background: linear-gradient(135deg, var(--yellow) 0%, #FFD54F 100%);
+  border-left: 4px solid var(--orange);
+  padding: 16px 24px;
+  margin: 15px auto;
+  max-width: 700px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Price Box */
+.price-box {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  border: 3px solid var(--gold);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 40px rgba(212,175,55,0.3);
+  position: relative;
+}
+
+.price-box::before {
+  content: '✦';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-label {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brown);
+  text-align: center;
+}
+
+.price-amount {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(36px, 8vw, 56px);
+  color: var(--gold-dark);
+  text-align: center;
+  font-weight: 900;
+  margin: 10px 0;
+}
+
+.price-note {
+  text-align: center;
+  font-size: 14px;
+  color: var(--brown);
+  font-style: italic;
+}
+
+/* Section */
+section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 5vw, 44px);
+  text-align: center;
+  color: var(--brown-dark);
+  margin-bottom: 40px;
+}
+
+.section-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 40px;
+}
+
+/* Table */
+.table-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border: 2px solid var(--gold);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown));
+  color: var(--gold-light);
+  padding: 16px;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+tr:nth-child(even) {
+  background: rgba(244,228,193,0.3);
+}
+
+.icon-cell {
+  font-size: 24px;
+  text-align: center;
+  width: 60px;
+}
+
+.value-cell {
+  color: var(--gold-dark);
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  white-space: nowrap;
+}
+
+/* Benefits Grid */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: white;
+  border: 2px solid var(--gold);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+}
+
+.benefit-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.benefit-title {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+}
+
+.benefit-desc {
+  font-size: 14px;
+  color: var(--brown);
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testi-card {
+  background: rgba(139,105,20,0.06);
+  border: 2px solid var(--gold);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.stars {
+  color: var(--gold-dark);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.testi-text {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brown), var(--gold));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.testi-name {
+  font-weight: bold;
+  color: var(--brown-dark);
+}
+
+.testi-loc {
+  font-size: 12px;
+  color: var(--brown);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s;
+  text-align: center;
+  margin: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), #F39C12);
+  color: white;
+  box-shadow: 0 8px 25px rgba(230,126,34,0.4);
+}
+
+.btn-wa {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--orange), #F39C12);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-section .section-title {
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--brown-dark), #4E342E);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 3px solid var(--gold);
+}
+
+footer .spiral {
+  width: 60px;
+  height: 60px;
+}
+
+.contact-details {
+  margin: 20px 0;
+  line-height: 2;
+}
+
+.contact-details a {
+  color: var(--gold-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-details a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  table { font-size: 12px; }
+  th, td { padding: 10px 8px; }
+  .icon-cell { width: 40px; font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="spiral">
+    <div class="spiral-ring"></div>
+    <div class="spiral-ring"></div>
+    <div class="spiral-ring"></div>
+    <div class="spiral-center">⊛</div>
+  </div>
+
+  <div class="badge">⚡ REJEKI BERLIMPAH MENANTI</div>
+  
+  <h1>
+    Kemitraan Toko Sembako
+    <span class="gold">BERKAH 50 JUTA</span>
+  </h1>
+
+  <p>
+    Ini bukan sekadar usaha biasa. Ini adalah jalan rezeki yang telah diperhitungkan dengan matang.
+    Energi keberkahan mengalir dari stok barang lengkap, sistem kasir canggih, hingga website toko online.
+  </p>
+
+  <div class="highlight">✦ Ini bukan urutan kalender. Ini peta energi bisnis.</div>
+  <div class="highlight">✦ Angka bukan urutan hari. Tapi bobot keberkahan dalam paket usaha.</div>
+  <div class="highlight">✦ Formula kesuksesan: Tubuh (Modal) – Jiwa (Semangat) – Semesta (Rezeki)</div>
+
+  <div class="price-box">
+    <div class="price-label">Investasi Keberkahan</div>
+    <div class="price-amount">Rp 50.000.000</div>
+    <div class="price-note">Satu paket lengkap untuk memulai usaha yang penuh berkah</div>
+  </div>
+</section>
+
+<!-- TABLE SECTION -->
+<section style="background: rgba(255,255,255,0.5);">
+  <h2 class="section-title">Apa yang Anda Terima?</h2>
+  <div class="section-line"></div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Isi Paket</th>
+          <th>Nilai</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="icon-cell">📦</td>
+          <td><strong>Stok Barang Sembako</strong><br>200+ SKU kebutuhan pokok siap jual</td>
+          <td class="value-cell">Rp 25 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">💻</td>
+          <td><strong>Sistem Kasir Digital POS</strong><br>Tablet, printer, software kasir cloud</td>
+          <td class="value-cell">Rp 8 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">🌐</td>
+          <td><strong>Website Toko Online</strong><br>E-commerce + domain + hosting 1 tahun</td>
+          <td class="value-cell">Rp 5 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">🏪</td>
+          <td><strong>Rak Gondola Premium</strong><br>4 set rak besi untuk display menarik</td>
+          <td class="value-cell">Rp 4 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">👨‍💼</td>
+          <td><strong>Pelatihan & Pendampingan</strong><br>3 hari on-site + support 30 hari</td>
+          <td class="value-cell">Rp 3 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">🚚</td>
+          <td><strong>Instalasi & Setup</strong><br>Pengiriman + pemasangan peralatan</td>
+          <td class="value-cell">Rp 2 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">📱</td>
+          <td><strong>Aplikasi Owner Dashboard</strong><br>Monitor penjualan real-time</td>
+          <td class="value-cell">Rp 1.2 Juta</td>
+        </tr>
+        <tr>
+          <td class="icon-cell">🎨</td>
+          <td><strong>Branding & Spanduk Toko</strong><br>Desain profesional identitas toko</td>
+          <td class="value-cell">Rp 2.5 Juta</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight" style="margin-top: 30px;">
+    ✦ Total nilai: Rp 50,7 Juta – Anda dapatkan SEMUA dengan Rp 50 Juta
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section>
+  <h2 class="section-title">Mengapa Memilih Kemitraan Ini?</h2>
+  <div class="section-line"></div>
+
+  <div class="benefits">
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3 class="benefit-title">Energi Siap Beroperasi</h3>
+      <p class="benefit-desc">Toko langsung jalan dalam 7 hari. Tidak perlu pusing mencari supplier atau setup dari nol.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🎯</div>
+      <h3 class="benefit-title">Formula Terbukti</h3>
+      <p class="benefit-desc">500+ mitra telah sukses. Tingkat kepuasan 98% membuktikan ini bukan janji kosong.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">💎</div>
+      <h3 class="benefit-title">Nilai Lebih Tinggi</h3>
+      <p class="benefit-desc">Paket senilai Rp 50,7 juta dengan investasi Rp 50 juta. Bonus rak gondola jutaan rupiah!</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🤝</div>
+      <h3 class="benefit-title">Pendampingan Penuh</h3>
+      <p class="benefit-desc">Tim ahli dampingi dari setup hingga operasional. Support berkelanjutan untuk sukses.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">📈</div>
+      <h3 class="benefit-title">Sistem Terintegrasi</h3>
+      <p class="benefit-desc">Kasir digital, website, dashboard terhubung. Kelola toko dari mana saja dengan mudah.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🏆</div>
+      <h3 class="benefit-title">Akses Distributor</h3>
+      <p class="benefit-desc">Terhubung supplier resmi harga distributor. Margin keuntungan lebih optimal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background: rgba(139,105,20,0.05);">
+  <h2 class="section-title">Kisah Keberkahan Mitra Kami</h2>
+  <div class="section-line"></div>
+
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Awalnya ragu, tapi setelah melihat sistemnya yang lengkap dan terukur, saya yakin ini jalan rezeki yang tepat. Alhamdulillah, 4 bulan berjalan omset sudah Rp 40 juta per bulan."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">B</div>
+        <div>
+          <div class="testi-name">Budi Santoso</div>
+          <div class="testi-loc">📍 Bekasi, Jawa Barat</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Yang saya sukai adalah sistem kasir digital. Saya bisa pantau penjualan dari rumah lewat HP. Website toko online-nya pun ramai pembeli. Investasi terbaik!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Siti Rahayu</div>
+          <div class="testi-loc">📍 Tangerang, Banten</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Prosesnya sangat cepat dan profesional. Seminggu setelah deal, toko sudah buka dan beroperasi penuh. Tim sangat membantu dari setup sampai training."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rudi Hermawan</div>
+          <div class="testi-loc">📍 Depok, Jawa Barat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="spiral">
+    <div class="spiral-ring"></div>
+    <div class="spiral-ring"></div>
+    <div class="spiral-ring"></div>
+    <div class="spiral-center" style="color: white;">⊛</div>
+  </div>
+
+  <h2 class="section-title">Waktunya Membuka Pintu Rezeki</h2>
+  <div class="section-line" style="background: linear-gradient(to right, transparent, white, transparent);"></div>
+
+  <div class="highlight" style="background: white; color: var(--text-dark); max-width: 700px;">
+    ✦ Kuota mitra terbatas setiap bulan. Jangan sampai kesempatan ini terlewatkan.
+  </div>
+
+  <div style="margin-top: 30px;">
+    <a href="https://wa.me/6283871666136?text=Halo%2C+saya+tertarik+dengan+paket+kemitraan+Berkah+50+juta" class="btn btn-wa">💬 Konsultasi WhatsApp</a>
+    <a href="tel:083871666136" class="btn btn-primary">📞 Hubungi Sekarang</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="spiral">
+    <div class="spiral-ring"></div>
+    <div class="spiral-ring"></div>
+    <div class="spiral-center" style="font-size: 24px;">⊛</div>
+  </div>
+
+  <h3 style="font-family: 'Cinzel', serif; font-size: 20px; margin: 20px 0; color: var(--gold);">
+    Kemitraan Toko Sembako Berkah
+  </h3>
+
+  <div class="contact-details">
+    <p>📞 <a href="tel:083871666136">083871666136</a></p>
+    <p>💬 <a href="https://wa.me/6283871666136">WhatsApp</a></p>
+    <p>📧 <a href="mailto:Malviejayagroup@gmail.com">Malviejayagroup@gmail.com</a></p>
+    <p>🌐 www.tokosembakoberkah.id | 📍 Melayani Se-Indonesia</p>
+  </div>
+
+  <p style="font-size: 12px; opacity: 0.7; margin-top: 20px;">
+    © 2025 Kemitraan Toko Sembako Berkah. Program kemitraan resmi terdaftar dan berizin.
+  </p>
+</footer>
+
+</body>
+</html>
